@@ -39,8 +39,9 @@ Partial Class login_form
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.ImageLocation = "D:\Documents\Visual Studio 2015\Projects\MonitoringSystem\Icons\desktop-monitor_2" &
-    "00x200.png"
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.ImageLocation = ""
         Me.PictureBox1.Location = New System.Drawing.Point(50, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(200, 200)
