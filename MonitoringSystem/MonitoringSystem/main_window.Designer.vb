@@ -25,6 +25,7 @@ Partial Class main_window
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(main_window))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.dateTime_lbl = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -37,10 +38,9 @@ Partial Class main_window
         Me.addDriver_btn = New System.Windows.Forms.Button()
         Me.newSched_btn = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.display_btn = New System.Windows.Forms.Button()
         Me.exit_btn = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.dateTime_lbl = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -62,6 +62,17 @@ Partial Class main_window
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(200, 480)
         Me.Panel1.TabIndex = 0
+        '
+        'dateTime_lbl
+        '
+        Me.dateTime_lbl.AutoSize = True
+        Me.dateTime_lbl.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dateTime_lbl.Location = New System.Drawing.Point(19, 454)
+        Me.dateTime_lbl.Margin = New System.Windows.Forms.Padding(10, 0, 10, 0)
+        Me.dateTime_lbl.Name = "dateTime_lbl"
+        Me.dateTime_lbl.Size = New System.Drawing.Size(50, 17)
+        Me.dateTime_lbl.TabIndex = 7
+        Me.dateTime_lbl.Text = "Label8"
         '
         'Label7
         '
@@ -212,22 +223,22 @@ Partial Class main_window
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'Button2
+        'display_btn
         '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Gray
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button2.Location = New System.Drawing.Point(440, 266)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(5)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(123, 132)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Display Trips"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.display_btn.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.display_btn.FlatAppearance.BorderColor = System.Drawing.Color.Gray
+        Me.display_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.display_btn.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.display_btn.Image = CType(resources.GetObject("display_btn.Image"), System.Drawing.Image)
+        Me.display_btn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.display_btn.Location = New System.Drawing.Point(440, 266)
+        Me.display_btn.Margin = New System.Windows.Forms.Padding(5)
+        Me.display_btn.Name = "display_btn"
+        Me.display_btn.Size = New System.Drawing.Size(123, 132)
+        Me.display_btn.TabIndex = 1
+        Me.display_btn.Text = "Display Trips"
+        Me.display_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.display_btn.UseVisualStyleBackColor = False
         '
         'exit_btn
         '
@@ -246,17 +257,6 @@ Partial Class main_window
         '
         Me.Timer1.Enabled = True
         '
-        'dateTime_lbl
-        '
-        Me.dateTime_lbl.AutoSize = True
-        Me.dateTime_lbl.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dateTime_lbl.Location = New System.Drawing.Point(19, 454)
-        Me.dateTime_lbl.Margin = New System.Windows.Forms.Padding(10, 0, 10, 0)
-        Me.dateTime_lbl.Name = "dateTime_lbl"
-        Me.dateTime_lbl.Size = New System.Drawing.Size(50, 17)
-        Me.dateTime_lbl.TabIndex = 7
-        Me.dateTime_lbl.Text = "Label8"
-        '
         'main_window
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -264,7 +264,7 @@ Partial Class main_window
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(625, 480)
         Me.Controls.Add(Me.exit_btn)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.display_btn)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.newSched_btn)
         Me.Controls.Add(Me.addDriver_btn)
@@ -287,7 +287,7 @@ Partial Class main_window
     Friend WithEvents addDriver_btn As Button
     Friend WithEvents newSched_btn As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents display_btn As Button
     Friend WithEvents exit_btn As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents Label4 As Label
