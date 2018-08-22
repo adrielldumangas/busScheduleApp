@@ -8,6 +8,10 @@ Public Class login_form
     Public tableName As String = "Logins"
     Public driverTable As String = "DriverInfo"
     Public scheduleTable As String = "Schedules"
+    Public vehicleTable As String = "Vehicle"
+    Public vehicleTypeTable As String = "VehicleType"
+    Public routeTable As String = "Route"
+    Public fareTable As String = "Fare"
     Dim directoryPath As String = "C:\Test\"
     Dim dbFilename As String = "test.mdb"
     Public dbFullPath As String = directoryPath & dbFilename
@@ -36,6 +40,10 @@ Public Class login_form
                 Dim dbSchemaLogins As DataTable = con.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, New Object() {Nothing, Nothing, tableName, "TABLE"})
                 Dim dbSchemaDriver As DataTable = con.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, New Object() {Nothing, Nothing, driverTable, "TABLE"})
                 Dim dbSchemaSchedule As DataTable = con.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, New Object() {Nothing, Nothing, scheduleTable, "TABLE"})
+                Dim dbSchemaVehicle As DataTable = con.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, New Object() {Nothing, Nothing, vehicleTable, "TABLE"})
+                Dim dbSchemaVehicleType As DataTable = con.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, New Object() {Nothing, Nothing, vehicleTypeTable, "TABLE"})
+                Dim dbSchemaRoute As DataTable = con.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, New Object() {Nothing, Nothing, routeTable, "TABLE"})
+                Dim dbSchemaFare As DataTable = con.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, New Object() {Nothing, Nothing, fareTable, "TABLE"})
                 con.Close()
 
                 ' If the table exists, the count = 1
@@ -91,7 +99,67 @@ Public Class login_form
                                                       "[VehicleID] TEXT(10), " &
                                                       "[PlateNumber] TEXT(20), " &
                                                       "[Route] TEXT(20), " &
-                                                      "[CarType] TEXT(10))", con)
+                                                      "[VehicleType] TEXT(10))", con)
+                    con.Open()
+                    cmd.ExecuteNonQuery()
+                    con.Close()
+
+                End If
+
+                'Create table for Vehicles
+                If dbSchemaVehicle.Rows.Count > 0 Then
+                    ' do whatever you want to do if the table exists
+                Else
+                    'do whatever you want to do if the table does not exist
+                    ' e.g. create a table
+                    Dim cmd As New OleDbCommand("CREATE TABLE [" + vehicleTable + "] " &
+                                                      "([ID] COUNTER PRIMARY KEY, " &
+                                                      "[Vehicle] TEXT(50))", con)
+                    con.Open()
+                    cmd.ExecuteNonQuery()
+                    con.Close()
+
+                End If
+
+                'Create table for Vehicle Type
+                If dbSchemaVehicleType.Rows.Count > 0 Then
+                    ' do whatever you want to do if the table exists
+                Else
+                    'do whatever you want to do if the table does not exist
+                    ' e.g. create a table
+                    Dim cmd As New OleDbCommand("CREATE TABLE [" + vehicleTypeTable + "] " &
+                                                      "([ID] COUNTER PRIMARY KEY, " &
+                                                      "[VehicleType] TEXT(50))", con)
+                    con.Open()
+                    cmd.ExecuteNonQuery()
+                    con.Close()
+
+                End If
+
+                'Create table for Route
+                If dbSchemaRoute.Rows.Count > 0 Then
+                    ' do whatever you want to do if the table exists
+                Else
+                    'do whatever you want to do if the table does not exist
+                    ' e.g. create a table
+                    Dim cmd As New OleDbCommand("CREATE TABLE [" + routeTable + "] " &
+                                                      "([ID] COUNTER PRIMARY KEY, " &
+                                                      "[Route] TEXT(50))", con)
+                    con.Open()
+                    cmd.ExecuteNonQuery()
+                    con.Close()
+
+                End If
+
+                'Create table for Fare
+                If dbSchemaFare.Rows.Count > 0 Then
+                    ' do whatever you want to do if the table exists
+                Else
+                    'do whatever you want to do if the table does not exist
+                    ' e.g. create a table
+                    Dim cmd As New OleDbCommand("CREATE TABLE [" + fareTable + "] " &
+                                                      "([ID] COUNTER PRIMARY KEY, " &
+                                                      "[Fare] TEXT(50))", con)
                     con.Open()
                     cmd.ExecuteNonQuery()
                     con.Close()

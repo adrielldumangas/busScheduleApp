@@ -46,3 +46,5 @@ E:\Documents\GitHub\busScheduleApp\MonitoringSystem\MonitoringSystem\obj\Debug\M
 E:\Documents\GitHub\busScheduleApp\MonitoringSystem\MonitoringSystem\obj\Debug\MonitoringSystem.Resources.resources
 E:\Documents\GitHub\busScheduleApp\MonitoringSystem\MonitoringSystem\obj\Debug\MonitoringSystem.signUp_form.resources
 E:\Documents\GitHub\busScheduleApp\MonitoringSystem\MonitoringSystem\obj\Debug\MonitoringSystem.vbproj.GenerateResource.Cache
+E:\Documents\GitHub\busScheduleApp\MonitoringSystem\MonitoringSystem\obj\Debug\MonitoringSystem.display_window.resources
+E:\Documents\GitHub\busScheduleApp\MonitoringSystem\MonitoringSystem\obj\Debug\MonitoringSystem.schedule_form.resources
